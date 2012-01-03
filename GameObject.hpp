@@ -39,6 +39,7 @@ class GameObject
 public:
     GameObject(const GameObjId& id): id_(id){}
     std::vector<const GameComponent*> getComponentsByFamilyID(const GameCompId& id);
+    GameObject& operator=(const GameObject& rhs);
     
 protected:
     GameObjId id_; //Game Object's Unique ID

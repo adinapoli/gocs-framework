@@ -27,6 +27,18 @@
 
 #include "GameObject.hpp"
 
+GameObject& GameObject::operator=(const GameObject& rhs)
+{
+    //Probably not the best solution
+    if(this != &rhs)
+    {
+        componentsMap_.clear();
+        id_ = rhs.id_;
+        componentsMap_ = rhs.componentsMap_;
+    }
+    
+    return *this; 
+}
 
 std::vector<const GameComponent*> GameObject::getComponentsByFamilyID(const GameCompId& id)
 {
