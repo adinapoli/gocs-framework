@@ -30,6 +30,7 @@
 
 #include <string>
 #include <map>
+#include <vector>
 #include "Types.hpp"
 #include "GameComponent.hpp"
 
@@ -37,6 +38,7 @@ class GameObject
 {
 public:
     GameObject(const GameObjId& id): id_(id){}
+    std::vector<const GameComponent*> getComponentsByFamilyID(const GameCompId& id);
     
 protected:
     GameObjId id_; //Game Object's Unique ID

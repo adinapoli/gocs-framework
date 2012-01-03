@@ -34,6 +34,7 @@
 class GameComponent
 {
 public:
+    GameComponent(const GameCompId& id):id_(id){}
     virtual void update() = 0; //Update the state of the Component
     
     const GameObjId& ownerId() const { return owner_; }

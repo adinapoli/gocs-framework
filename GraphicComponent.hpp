@@ -33,7 +33,8 @@
 class GraphicComponent: public GameComponent
 {
 public:
-    const FamilyId familyId() const{ return std::string("Graphics"); }
+    GraphicComponent(const GameCompId& id): GameComponent(id){}
+    const FamilyId familyId() const{ return std::string("graphics"); }
     virtual void render() = 0;
 };
 

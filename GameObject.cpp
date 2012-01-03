@@ -26,3 +26,20 @@
  */
 
 #include "GameObject.hpp"
+
+
+std::vector<const GameComponent*> GameObject::getComponentsByFamilyID(const GameCompId& id)
+{
+    std::vector<const GameComponent*> result;
+    std::string familyID;
+    ComponentsMap::iterator it;
+    
+    for(it = componentsMap_.begin(); it != componentsMap_.end(); it++)
+    {
+        familyID = it->second->familyId();
+        if(familyID.compare(id) == 0)
+            result.push_back(it->second);
+    }
+    
+    return result;
+}
